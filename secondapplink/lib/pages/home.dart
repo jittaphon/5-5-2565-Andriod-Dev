@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
           builder: (context, snapshot){
             var data = json.decode(snapshot.data.toString());
             return ListView.builder(itemBuilder:(BuildContext context , int index){
-              return MyBox(data[index]['title'],data[index]['subtitle'],data[index]['image_url']);
+              return MyBox(data[index]['title'],data[index]['subtitle'],data[index]['image_url'],data[index]['detail']);
                    
 
             },
@@ -33,11 +33,11 @@ class _HomePageState extends State<HomePage> {
    
   }
   
-Widget MyBox(String title,String subtitle,String image){ // สร้าง widget เองนักเลงพอ // custom widget // สร้าง widget เป็น function
+Widget MyBox(String title,String subtitle,String image, String detail){ // สร้าง widget เองนักเลงพอ // custom widget // สร้าง widget เป็น function
   return Container(
     margin: EdgeInsets.only(top: 20),
     padding: EdgeInsets.all(20),
-    height: 150,
+    height: 200,
     decoration: BoxDecoration(
       color: Colors.blue[200],
       borderRadius: BorderRadius.circular(20),
@@ -55,6 +55,7 @@ Widget MyBox(String title,String subtitle,String image){ // สร้าง widg
       children: [
       Text(title, style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),),
       Text(subtitle, style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),),
+      Text(detail, style: TextStyle(fontSize: 10,color: Colors.white,fontWeight: FontWeight.bold),),
        TextButton(
               onPressed:() {
                 print("next page >>");

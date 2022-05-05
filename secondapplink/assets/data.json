@@ -1,18 +1,22 @@
 [{
     "title":"What is a computer?",
     "subtitle":"Computer is a things to calculate",
-    "image_url":"https://cdn.pixabay.com/photo/2022/03/04/20/53/city-7048002_960_720.jpg"
+    "image_url":"https://cdn.pixabay.com/photo/2022/03/04/20/53/city-7048002_960_720.jpg",
+    "detail":"A computer is an electronic device that manipulates information, or data. It has the ability to store, retrieve, and process data. You may already know that you can use a computer to type documents, send email, play games, and browse the Web. You "
 },
 {
     "title":"What is a Flutter?",
     "subtitle":"Flutter is a tool to create moblie",
-    "image_url":"https://pbs.twimg.com/media/FMYGZ3ZVIAcGekP?format=jpg&name=4096x4096"
+    "image_url":"https://pbs.twimg.com/media/FMYGZ3ZVIAcGekP?format=jpg&name=4096x4096",
+    "detail":"Flutter is an open source framework by Google for building beautiful, natively compiled, multi-platform applications from a single codebase."
+    
 
 },
 {
     "title":"What is a Dart?",
     "subtitle":"Dart is the language uesd in Flutter",
-    "image_url":"https://cdn.pixabay.com/photo/2022/03/02/18/07/russian-borzoi-7043714_960_720.jpg"
+    "image_url":"https://cdn.pixabay.com/photo/2022/03/02/18/07/russian-borzoi-7043714_960_720.jpg",
+    "detail":"Flutter is an Open-Source UI SDK developed by Google. It allows the development of iOS/Android apps and uses Dart as the programming language. Dart is an Open-Source, client-side programming language. It is easy to learn, stable, and creates high-performance applications."
 
 }
 ]
