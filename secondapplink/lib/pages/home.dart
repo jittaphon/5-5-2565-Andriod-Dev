@@ -24,13 +24,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20,),
              MyBox("What is a Dart?","Dart is the language uesd in Flutter","https://cdn.pixabay.com/photo/2022/03/02/18/07/russian-borzoi-7043714_960_720.jpg"),
             SizedBox(height: 20,),
-            TextButton(
-              onPressed:() {
-                print("next page >>");
-                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage()));
-              }, 
-            child: Text("readmore")
-            ) 
+           
             
           ],
         ),
@@ -39,8 +33,7 @@ class _HomePageState extends State<HomePage> {
       
    
   }
-}
-
+  
 Widget MyBox(String title,String subtitle,String image){ // สร้าง widget เองนักเลงพอ // custom widget // สร้าง widget เป็น function
   return Container(
     padding: EdgeInsets.all(20),
@@ -61,7 +54,15 @@ Widget MyBox(String title,String subtitle,String image){ // สร้าง widg
       crossAxisAlignment:CrossAxisAlignment.start,
       children: [
       Text(title, style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),),
-      Text(subtitle, style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),)
-    ],),
+      Text(subtitle, style: TextStyle(fontSize: 25,color: Colors.white,fontWeight: FontWeight.bold),),
+       TextButton(
+              onPressed:() {
+                print("next page >>");
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage()));
+              }, 
+            child: Text("readmore")) 
+    ]),
   );
+}
+
 }
