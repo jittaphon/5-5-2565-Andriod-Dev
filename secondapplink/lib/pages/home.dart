@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'detail.dart';
 
@@ -15,19 +16,17 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(title: Text("Computer Knowledge")),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: ListView(
-          children: [
-            Text("Home Page"),
-            MyBox("What is a computer?","Computer is a things to calculate","https://cdn.pixabay.com/photo/2022/03/04/20/53/city-7048002_960_720.jpg"),
-            SizedBox(height: 20,),
-            MyBox("What is a Flutter?","Flutter is a tool to create moblie","https://pbs.twimg.com/media/FMYGZ3ZVIAcGekP?format=jpg&name=4096x4096"),
-            SizedBox(height: 20,),
-             MyBox("What is a Dart?","Dart is the language uesd in Flutter","https://cdn.pixabay.com/photo/2022/03/02/18/07/russian-borzoi-7043714_960_720.jpg"),
-            SizedBox(height: 20,),
-           
-            
-          ],
-        ),
+        child: FutureBuilder(
+          builder: (context, snapshot){
+            var data = json.decode(snapshot.data.toString());
+            return ListView.builder(itemBuilder:(BuildContext context , int index){
+              return MyBox(data[index]['title'],data[index]['subtitle'],data[index]['image_url']);
+                   
+
+            },
+            itemCount: data.length,);
+          },
+          future: DefaultAssetBundle.of(context).loadString('assets/data.json'),) // ใส่ future เพื่อให้รอ data ออกมาให้หมดก่อนนะ
       ),
     );
       
@@ -36,6 +35,7 @@ class _HomePageState extends State<HomePage> {
   
 Widget MyBox(String title,String subtitle,String image){ // สร้าง widget เองนักเลงพอ // custom widget // สร้าง widget เป็น function
   return Container(
+    margin: EdgeInsets.only(top: 20),
     padding: EdgeInsets.all(20),
     height: 150,
     decoration: BoxDecoration(
@@ -60,7 +60,7 @@ Widget MyBox(String title,String subtitle,String image){ // สร้าง widg
                 print("next page >>");
                 Navigator.push(context, MaterialPageRoute(builder: (context) => DetailPage()));
               }, 
-            child: Text("readmore")) 
+            child: Text("readmore")),
     ]),
   );
 }
